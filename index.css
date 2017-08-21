@@ -1,0 +1,124 @@
+* {
+  margin: 0px;
+  padding: 0px; }
+
+.container {
+  font-family: 'Montserrat', sans-serif; }
+
+.content {
+  margin-top: 20px; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+.heading {
+  text-align: center; }
+  .heading h4 {
+    display: inline-block; }
+  .heading h2 {
+    display: inline-block;
+    color: #00BFA5;
+    font-weight: bold; }
+  .heading p {
+    font-size: 15px;
+    color: #00BFA5;
+    font-weight: bold; }
+
+.main {
+  background-color: #64FFDA;
+  width: inherit;
+  margin: 0px 0px 20px 0px;
+  vertical-align: top; }
+
+.cir1 {
+  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 200px; }
+  .cir1 h4 {
+    display: inline-block; }
+  .cir1 .topheading {
+    max-width: 170px;
+    min-height: 30px;
+    color: black; }
+  .cir1 .box {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 20px;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    .cir1 .box h5 {
+      margin-top: 40px;
+      text-decoration: none;
+      color: #d3d3d3;
+      cursor: pointer; }
+      .cir1 .box h5 a {
+        color: white; }
+
+.side {
+  vertical-align: top; }
+  .side .command {
+    width: 400px;
+    margin-left: 30px;
+    height: 500px;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top; }
+  .side h4 {
+    margin: 20px;
+    color: #00BFA5;
+    font-weight: bold; }
+  .side ol {
+    margin: 30px 0px 30px 60px;
+    font-size: 16px; }
+
+.beau {
+  font-size: 20px;
+  padding: 50px;
+  font-family: 'Ubuntu', sans-serif; }
+
+.txtColorChange:hover {
+  color: #80CBC4;
+  text-decoration: none; }
+
+.bgColorChange:hover {
+  background-color: #d3d3d3; }
+  .bgColorChange:hover h5 {
+    color: black; }
+
+.fadeIn {
+  opacity: 0.5; }
+  .fadeIn:hover {
+    opacity: 1; }
+
+.grow:hover {
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4); }
+
+.shrink:hover {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.rot:hover {
+  -webkit-transform: rotateZ(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotateZ(-30deg); }
+
+.toCircle:hover {
+  border-radius: 50%; }
+
+.inborder:hover {
+  -webkit-box-shadow: inset 0 0 0 10px #00BFA5;
+  box-shadow: inset 0 0 0 10px #00BFA5; }
+
+.glyphicon {
+  color: #00BFA5;
+  padding-left: 10px; }

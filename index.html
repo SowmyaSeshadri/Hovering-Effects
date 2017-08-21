@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <title>Hovering Effects-All at one place!</title>
+  <link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="heading">
+    <h2>CSS Hovering Effects</h2><br>
+    <h3>All at one place! <i class="glyphicon glyphicon-check"></i></h3>
+    <p>Experience the hovering effects, pick the one you like, copy the code, use it in your website!</p>
+  </div>
+
+<!--Main content -->
+<div class="content row col-md-12">
+  <div class="main col-md-7">
+<!-- Row 1 -->
+<div class="row">
+    <div class="cir1 col-md-4" id="txtColor">
+      <h5 class="topheading">Text Colour Change</h5><br/>
+      <div class="box">
+        <h5><a class="txtColorChange">Hover me</a></h5>
+      </div>
+    </div>
+
+    <div class="cir1 col-md-4" id="bgColor">
+      <h5 class="topheading">Background Colour Change</h5><br/>
+      <div class="bgColorChange box">
+        <h5>Hover me</h5>
+      </div>
+    </div>
+
+    <div class="cir1 col-md-4" id="fadeIn">
+      <h5 class="topheading">Fade In</h5><br/>
+      <div class="box fadeIn">
+        <h5>Hover me</h5>
+      </div>
+    </div>
+  </div>
+
+<!-- Row 2 -->
+<div class="row">
+<div class="cir1 col-md-4" id="grow">
+  <h5 class="topheading">Grow</h5><br/>
+  <div class="box grow">
+    <h5>Hover me</h5>
+  </div>
+</div>
+
+<div class="cir1 col-md-4" id="shrink">
+  <h5 class="topheading">Shrink</h5><br/>
+  <div class="box shrink">
+    <h5>Hover me</h5>
+  </div>
+</div>
+
+<div class="cir1 col-md-4" id="rotate">
+  <h5 class="topheading">Rotate Element</h5><br/>
+  <div class="rot box">
+    <h5>Hover me</h5>
+  </div>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="row">
+<div class="cir1 col-md-4" id="circle">
+  <h5 class="topheading">To circle</h5><br/>
+  <div class="box toCircle">
+    <h5>Hover me</h5>
+  </div>
+</div>
+
+<div class="cir1 col-md-4" id="border">
+  <h5 class="topheading">Inset Border</h5><br/>
+  <div class="box inborder">
+    <h5>Hover me</h5>
+  </div>
+</div>
+
+<!-- <div class="cir1 col-md-4">
+  <h5>Colour Change</h5><br/>
+  <div class="box sizing">
+    <h5>Hover Me</h5>
+  </div>
+</div> -->
+</div>
+</div>
+
+  <div class="side col-md-5">
+
+        <!-- Command box -->
+            <div class="command">
+              <h4>How do I add this to my website?</h4>
+              <ol>
+                <li>Click on the effect you want to use.<i class="glyphicon glyphicon-ok-sign"></i></li>
+                <li>Copy the code from below.<i class="glyphicon glyphicon-download-alt"></i></li>
+                <li>Use the same class in your HTML!<i class="glyphicon glyphicon-thumbs-up"></i></li>
+              </ol>
+              <div id="cmd" class="cmdbox"></div>
+            </div>
+  </div>
+
+</div>
+</div>
+<script>
+ var content = {
+   "txtColor" : ".txtColorChange:hover{\
+     color: #80CBC4;\
+     text-decoration: none;}",
+   "bgColor" : ".bgColorChange:hover{background-color: #d3d3d3; }.bgColorChange:hover h5 {color: black; }",
+   "fadeIn" : ".fadeIn {opacity: 0.5; }.fadeIn:hover {opacity: 1; }",
+   "grow" : ".grow:hover {-webkit-transform: scale(1.4);-ms-transform: scale(1.4);transform: scale(1.4); }",
+   "shrink" : ".shrink:hover {-webkit-transform: scale(0.8);-ms-transform: scale(0.8);transform: scale(0.8); }",
+   "rotate" : ".rot:hover {-webkit-transform: rotateZ(-30deg);-ms-transform: rotate(-30deg);transform: rotateZ(-30deg); }",
+   "circle" : ".toCircle:hover {border-radius: 50%; }",
+   "border" : ".inborder:hover {-webkit-box-shadow: inset 0 0 0 10px #00BFA5;box-shadow: inset 0 0 0 10px blue; }"
+ };
+
+ var display = {
+
+      commonDis: function(data){
+        var txtdiv = document.getElementById("cmd");
+        var txtdivCont = data;
+        console.log(txtdivCont);
+        txtdiv.textContent = txtdivCont;
+        txtdiv.className ="beau";
+      },
+      displayTxt : function(){
+         this.commonDis(content.txtColor);
+      },
+
+      displayBg : function(){
+        this.commonDis(content.bgColor);
+      },
+      displayFadeIn : function(){
+        this.commonDis(content.fadeIn);
+      },
+      displayGrow : function(){
+        this.commonDis(content.grow);
+      },
+      displayShrink : function(){
+        this.commonDis(content.shrink);
+      },
+      displayRotate : function(){
+        this.commonDis(content.rotate);
+      },
+      displayCircle : function () {
+        this.commonDis(content.circle);
+      },
+      displayBorder : function(){
+        this.commonDis(content.border);
+      }
+
+ };
+
+ document.getElementById("txtColor").addEventListener("click",function(){
+   display.displayTxt();
+ })
+ document.getElementById("bgColor").addEventListener("click",function(){
+   display.displayBg();
+ })
+ document.getElementById("fadeIn").addEventListener("click",function(){
+   display.displayFadeIn();
+ })
+ document.getElementById("grow").addEventListener("click",function(){
+   display.displayGrow();
+ })
+ document.getElementById("shrink").addEventListener("click",function(){
+   display.displayShrink();
+ })
+ document.getElementById("rotate").addEventListener("click",function(){
+   display.displayRotate();
+ })
+ document.getElementById("circle").addEventListener("click",function(){
+   display.displayCircle();
+ })
+ document.getElementById("border").addEventListener("click",function(){
+   display.displayBorder();
+ })
+</script>
+</body>
+</html>
