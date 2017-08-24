@@ -83,9 +83,7 @@ a{
       text-decoration: none;
       color:#d3d3d3;
       cursor: pointer;
-      a{
-        color:white;
-      }
+
   }
   }
 }
@@ -124,9 +122,11 @@ ol{
 
 
 //Hovering effects
+
 .txtColorChange{
+  color:white;
 &:hover{
-  color:#80CBC4;
+  color: #80CBC4;
   text-decoration: none;
 }
 }

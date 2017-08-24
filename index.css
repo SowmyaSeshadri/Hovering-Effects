@@ -71,8 +71,6 @@ a {
       text-decoration: none;
       color: #d3d3d3;
       cursor: pointer; }
-      .cir1 .box h5 a {
-        color: white; }
 
 .side {
   vertical-align: top; }
@@ -97,9 +95,11 @@ a {
   padding: 50px;
   font-family: 'Ubuntu', sans-serif; }
 
-.txtColorChange:hover {
-  color: #80CBC4;
-  text-decoration: none; }
+.txtColorChange {
+  color: white; }
+  .txtColorChange:hover {
+    color: #80CBC4;
+    text-decoration: none; }
 
 .bgColorChange:hover {
   background-color: #d3d3d3; }
