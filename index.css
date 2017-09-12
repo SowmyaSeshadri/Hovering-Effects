@@ -48,21 +48,20 @@ a {
   text-align: center;
   display: inline-block;
   margin-top: 20px;
-  margin-bottom: 20px;
-  height: 200px; }
+  margin-bottom: 10px; }
   .cir1 h4 {
     display: inline-block; }
   .cir1 .topheading {
     max-width: 170px;
-    min-height: 30px;
-    color: black; }
+    color: black;
+    margin-bottom: 0px; }
   .cir1 .box {
     display: inline-block;
     height: 100px;
     width: 100px;
     background-color: black;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
@@ -147,6 +146,95 @@ a {
 .iconName:hover #icon-text {
   display: block; }
 
+.textSize:hover {
+  font-size: 20px; }
+
+.expandY:hover {
+  -webkit-transform: scaleY(1.4);
+  -ms-transform: scaleY(1.4);
+  transform: scaleY(1.4); }
+
+.expandX:hover {
+  -webkit-transform: scaleX(1.4);
+  -ms-transform: scaleX(1.4);
+  transform: scaleX(1.4); }
+
+.float:hover {
+  -webkit-transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  transform: translateY(-20px); }
+
+.sink:hover {
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px); }
+
+.moveHorizontal:hover {
+  -webkit-animation: moveHorizontal 1s 1;
+  animation: moveHorizontal 1s 1; }
+
+@-webkit-keyframes moveHorizontal {
+  25% {
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px); }
+  75% {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px); } }
+
+@keyframes moveHorizontal {
+  25% {
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px); }
+  75% {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px); } }
+
+.moveVertical:hover {
+  -webkit-animation: moveVertical 1s 1;
+  animation: moveVertical 1s 1; }
+
+@-webkit-keyframes moveVertical {
+  25% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  75% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px); } }
+
+@keyframes moveVertical {
+  25% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  75% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px); } }
+
+.bounce:hover {
+  -webkit-animation: bounce 1s 1;
+  animation: bounce 1s 1; }
+
+@-webkit-keyframes bounce {
+  25% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  50% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); }
+  75% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px); } }
+
+@keyframes bounce {
+  25% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  50% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); }
+  75% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px); } }
+
 .glyphicon {
   color: #00BFA5;
   padding-left: 10px; }
@@ -156,3 +244,6 @@ a {
   padding-left: 0px;
   padding-top: 0px;
   margin-top: 0px; }
+
+.cmdbox {
+  position: fixed; }

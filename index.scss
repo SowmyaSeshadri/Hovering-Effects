@@ -58,15 +58,14 @@ a{
   text-align: center;
   display: inline-block;
   margin-top: 20px;
-  margin-bottom: 20px;
-  height:200px;
+   margin-bottom: 10px;
   h4{
     display: inline-block;
   }
   .topheading{
     max-width: 170px;
-    min-height: 30px;
     color: black;
+    margin-bottom: 0px;
   }
   .box{
     display: inline-block;
@@ -75,7 +74,7 @@ a{
     background-color: black;
     // box-shadow: 10px 10px 5px #888888;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     transition:all 0.5s ease;
 
     h5{
@@ -192,8 +191,58 @@ ol{
 .iconName:hover #icon-text{
   display: block;
 }
+ .textSize:hover {
+   font-size: 20px;
+ }
 
-
+ .expandY:hover{
+   transform: scaleY(1.4);
+ }
+ .expandX:hover{
+   transform: scaleX(1.4);
+ }
+ .float:hover{
+   transform: translateY(-20px);
+ }
+ .sink:hover{
+   transform: translateY(20px);
+ }
+ .moveHorizontal:hover{
+animation: moveHorizontal 1s 1;
+ }
+ @keyframes moveHorizontal  {
+   25%{
+     transform: translateX(-20px);
+   }
+   75%{
+     transform: translateX(20px);
+   }
+ }
+ .moveVertical:hover{
+animation: moveVertical 1s 1;
+ }
+ @keyframes moveVertical  {
+   25%{
+     transform: translateY(-20px);
+   }
+   75%{
+     transform: translateY(20px);
+   }
+ }
+ .bounce:hover{
+   animation: bounce 1s 1;
+ }
+ @keyframes bounce{
+   25%{
+     transform: translateY(-20px);
+   }
+   50%{
+     transform: translateY(0px);
+   }
+   75%{
+     transform: translateY(-10px);
+   }
+ }
 //glyphicons
 .glyphicon{
   color: #00BFA5;
@@ -204,4 +253,8 @@ ol{
   padding-left: 0px;
   padding-top: 0px;
   margin-top: 0px;
+}
+
+.cmdbox{
+  position: fixed;
 }

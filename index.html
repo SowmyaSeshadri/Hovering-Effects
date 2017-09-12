@@ -37,7 +37,7 @@
     </div>
 
     <div class="cir1 col-md-4">
-      <h5 class="topheading">Background Colour Change</h5><br/>
+      <h5 class="topheading">Background Colour</h5><br/>
       <div class="bgColorChange box"  id="bgColor">
         <h5>Hover me</h5>
       </div>
@@ -88,6 +88,66 @@
     <h5>Hover me</h5>
   </div>
 </div>
+<div class="cir1 col-md-4">
+  <h5 class="topheading">Text Size</h5><br/>
+  <div class="box"  id="textSize">
+    <h5 class="textSize">Hover Me</h5>
+  </div>
+</div>
+
+
+<!--Row 4-->
+
+<div class="cir1 col-md-4">
+  <h5 class="topheading">Float</h5><br/>
+  <div class="box float"  id="float">
+    <h5>Hover Me</h5>
+  </div>
+</div>
+<div class="cir1 col-md-4">
+  <h5 class="topheading">ExpandY</h5><br/>
+  <div class="box expandY"  id="expandY">
+    <h5>Hover Me</h5>
+  </div>
+</div>
+
+<div class="cir1 col-md-4">
+  <h5 class="topheading">ExpandX</h5><br/>
+  <div class="box expandX"  id="expandX">
+    <h5>Hover Me</h5>
+  </div>
+</div>
+
+<!--Row 5 -->
+
+
+<div class="cir1 col-md-4">
+  <h5 class="topheading">Sink</h5><br/>
+  <div class="box sink"  id="sink">
+    <h5>Hover Me</h5>
+  </div>
+</div>
+
+<div class="cir1 col-md-4">
+  <h5 class="topheading">Horizontal Effects</h5><br/>
+  <div class="box moveHorizontal"  id="moveHorizontal">
+    <h5>Hover Me</h5>
+  </div>
+</div>
+
+<div class="cir1 col-md-4">
+  <h5 class="topheading">Vertical Effects</h5><br/>
+  <div class="box moveVertical"  id="moveVertical">
+    <h5>Hover Me</h5>
+  </div>
+</div>
+<!--Row 6-->
+<div class="cir1 col-md-4">
+  <h5 class="topheading">Bounce</h5><br/>
+  <div class="box bounce"  id="bounce">
+    <h5>Hover Me</h5>
+  </div>
+</div>
 
 <div class="cir1 col-md-4">
   <h5 class="topheading">Icon Name</h5><br/>
@@ -99,12 +159,7 @@
   </div>
 </div>
 
-<!-- <div class="cir1 col-md-4">
-  <h5>Colour Change</h5><br/>
-  <div class="box sizing">
-    <h5>Hover Me</h5>
-  </div>
-</div> -->
+
 </div>
 </div>
 
@@ -119,7 +174,12 @@
                 <li>Use the same class & id in your HTML!<i class="glyphicon glyphicon-thumbs-up"></i></li>
                 <li>Yay! <i style="padding-left:0px" class="glyphicon glyphicon-heart"></i> As simple as possible!</li>
               </ol>
-              <div id="cmd" class="cmdbox"></div>
+              <div id="cmd" class="cmdbox">
+
+              </div>
+              <p class="error-msg">
+Can't copy, hit Ctrl+C!
+</p>
             </div>
   </div>
 
@@ -136,8 +196,14 @@
    "rotate" : ".rot:hover {-webkit-transform: rotateZ(-30deg);-ms-transform: rotate(-30deg);transform: rotateZ(-30deg); }",
    "circle" : ".toCircle:hover {border-radius: 50%; }",
    "border" : ".inborder:hover {-webkit-box-shadow: inset 0 0 0 10px #00BFA5;box-shadow: inset 0 0 0 10px blue; }",
-   "iconin" : "#icon-text{ display: none;padding-top: 5px;}.iconName:hover #icon-text{display: block;}"
- };
+   "iconin" : "#icon-text{ display: none;padding-top: 5px;}.iconName:hover #icon-text{display: block;}",
+   "textSize" : ".textSize:hover {font-size: 20px;}",
+   "expandX" : ".expandX:hover{transform: scaleX(1.4);}",
+   "expandY" : ".expandY:hover{transform: scaleY(1.4);}",
+  "moveHorizontal" : " .moveHorizontal:hover{animation: moveHorizontal 1s 1;}@keyframes moveHorizontal{25%{transform: translateX(-20px);}75%{transform: translateX(20px);}}",
+  "moveVertical" : ".moveVertical:hover{animation: moveVertical 1s 1;}@keyframes moveVertical{25%{transform: translateY(-20px);}75%{transform: translateY(20px);}}",
+  "bounce" : ".bounce:hover{animation: bounce 1s 1;}@keyframes bounce{25%{transform: translateY(-20px);}50%{transform: translateY(0px);}75%{transform: translateY(-10px);}}"
+    };
 
  var display = {
 
@@ -147,6 +213,35 @@
         console.log(txtdivCont);
         txtdiv.textContent = txtdivCont;
         txtdiv.className ="beau";
+      },
+      copyToClipboard : function(data){
+        const textData = data;
+        textData.addEventListener("click", function(){
+          const selection = document.getSelection();
+          const range = document.createRange();
+          selection.removeAllRanges();
+selection.addRange(range);
+
+try {
+document.execCommand('copy');
+selection.removeAllRanges();
+
+const original = data;
+data.textContent = 'Copied!';
+
+// setTimeout(() => {
+// color.textContent = original;
+// color.classList.remove('success');
+// }, 1200);
+}catch(e) {
+  const errorMsg = document.querySelector('.error-msg');
+  errorMsg.classList.add('show');
+
+  setTimeout(() => {
+    errorMsg.classList.remove('show');
+  }, 1200);
+}
+        })
       },
       displayTxt : function(){
          this.commonDis(content.txtColor);
@@ -175,9 +270,27 @@
       },
       displayiconIn : function () {
         this.commonDis(content.iconin);
+      },
+      displaytextSize : function () {
+        this.commonDis(content.textSize);
+      },
+      displayexpandX : function () {
+        this.commonDis(content.expandX);
+      },
+      displayexpandY : function () {
+        this.commonDis(content.expandY);
+      },
+      displaymoveHorizontal : function () {
+        this.commonDis(content.moveHorizontal);
+      },
+      displaymoveVertical : function () {
+        this.commonDis(content.moveVertical);
+      },
+      displaybounce : function () {
+        this.commonDis(content.bounce);
       }
-
  };
+
 
  document.getElementById("txtColor").addEventListener("click",function(){
    display.displayTxt();
@@ -206,6 +319,22 @@
  document.getElementById("iconin").addEventListener("click",function(){
    display.displayiconIn();
  })
+ document.getElementById("expandX").addEventListener("click",function(){
+   display.displayexpandX();
+ })
+ document.getElementById("expandY").addEventListener("click",function(){
+   display.displayexpandY();
+ })
+ document.getElementById("moveHorizontal").addEventListener("click",function(){
+   display.displaymoveHorizontal();
+ })
+ document.getElementById("moveVertical").addEventListener("click",function(){
+   display.displaymoveVertical();
+ })
+ document.getElementById("bounce").addEventListener("click",function(){
+   display.displaybounce();
+ })
+
 </script>
 </body>
 </html>
