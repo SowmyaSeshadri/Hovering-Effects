@@ -177,9 +177,6 @@
               <div id="cmd" class="cmdbox">
 
               </div>
-              <p class="error-msg">
-Can't copy, hit Ctrl+C!
-</p>
             </div>
   </div>
 
@@ -213,35 +210,6 @@ Can't copy, hit Ctrl+C!
         console.log(txtdivCont);
         txtdiv.textContent = txtdivCont;
         txtdiv.className ="beau";
-      },
-      copyToClipboard : function(data){
-        const textData = data;
-        textData.addEventListener("click", function(){
-          const selection = document.getSelection();
-          const range = document.createRange();
-          selection.removeAllRanges();
-selection.addRange(range);
-
-try {
-document.execCommand('copy');
-selection.removeAllRanges();
-
-const original = data;
-data.textContent = 'Copied!';
-
-// setTimeout(() => {
-// color.textContent = original;
-// color.classList.remove('success');
-// }, 1200);
-}catch(e) {
-  const errorMsg = document.querySelector('.error-msg');
-  errorMsg.classList.add('show');
-
-  setTimeout(() => {
-    errorMsg.classList.remove('show');
-  }, 1200);
-}
-        })
       },
       displayTxt : function(){
          this.commonDis(content.txtColor);
